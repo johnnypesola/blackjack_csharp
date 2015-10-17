@@ -9,11 +9,13 @@ namespace BlackJack.model
     {
         private Deck m_deck = null;
         private const int g_maxScore = 21;
+        private List<Card> m_hand = new List<Card>(20);
 
         private rules.INewGameStrategy m_newGameRule;
         private rules.IHitStrategy m_hitRule;
 
 
+        // Constructor
         public Dealer(rules.RulesFactory a_rulesFactory)
         {
             m_newGameRule = a_rulesFactory.GetNewGameRule();
@@ -30,6 +32,21 @@ namespace BlackJack.model
                 return m_newGameRule.NewGame(m_deck, this, a_player);   
             }
             return false;
+        }
+
+        // Public methods
+        public void Stand()
+        {
+            if(m_deck != null)
+            {
+                ShowHand();
+
+                while(m_hitRule.DoHit(this))
+                {
+                    m_deck.GetCard();
+
+                }
+            }
         }
 
         public bool Hit(Player a_player)

@@ -7,15 +7,19 @@ namespace BlackJack.model
 {
     class Game
     {
+
+        // Init variables
         private model.Dealer m_dealer;
         private model.Player m_player;
 
+        // Constructor
         public Game()
         {
             m_dealer = new Dealer(new rules.RulesFactory());
             m_player = new Player();
         }
 
+        // Public methods
         public bool IsGameOver()
         {
             return m_dealer.IsGameOver();
@@ -39,6 +43,8 @@ namespace BlackJack.model
         public bool Stand()
         {
             // TODO: Implement this according to Game_Stand.sequencediagram
+
+            m_dealer.Stand();
             return true;
         }
 
