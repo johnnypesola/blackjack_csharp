@@ -8,6 +8,15 @@ namespace BlackJack.model
     class Game
     {
 
+        public enum Status
+        {
+            NewGame,
+            Hit,
+            Stand,
+            Quit,
+            Undefined
+        }
+
         // Init variables
         private model.Dealer m_dealer;
         private model.Player m_player;
@@ -42,7 +51,7 @@ namespace BlackJack.model
 
         public bool Stand()
         {
-            // TODO: Implement this according to Game_Stand.sequencediagram
+            // TODO: Implement this according to Game_Stand.sequencediagram DONE
 
             m_dealer.Stand();
             return true;

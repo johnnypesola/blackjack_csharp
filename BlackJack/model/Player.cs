@@ -32,6 +32,19 @@ namespace BlackJack.model
             }
         }
 
+        public bool HasAce()
+        {
+            foreach (Card c in GetHand())
+            {
+                if(c.GetValue() == Card.Value.Ace)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public int CalcScore()
         {
             int[] cardScores = new int[(int)model.Card.Value.Count]
