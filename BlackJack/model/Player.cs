@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.model
 {
-    class Player
+    class Player : model.BlackJackObserver
     {
         private List<Card> m_hand = new List<Card>();
 
@@ -70,6 +71,14 @@ namespace BlackJack.model
             }
 
             return score;
+        }
+        public string GetName()
+        {
+            return "name";
+        }
+        public int GetScore()
+        {
+            return CalcScore();
         }
     }
 }

@@ -2,17 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.view
 {
     class SimpleView : IView
     {
+        List<model.BlackJackObserver> m_observers;
+        public void AddSubscribers(model.BlackJackObserver a_sub)
+        {
+            if (m_observers == null)
+            {
+                m_observers = new List<model.BlackJackObserver>();
+            }
+            m_observers.Add(a_sub);
+        }
 
         public void DisplayWelcomeMessage()
         {
             System.Console.Clear();
             System.Console.WriteLine("Hello Black Jack World");
             System.Console.WriteLine("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
+            foreach (model.BlackJackObserver o in m_observers)
+            {
+                DisplayHand(o.GetName(), o.GetHand(), o.GetScore());
+                Thread.Sleep(500);
+            }
         }
 
         public model.Game.Status GetInput()
