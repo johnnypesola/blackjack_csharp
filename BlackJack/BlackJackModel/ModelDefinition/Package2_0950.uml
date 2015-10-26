@@ -101,6 +101,111 @@
               LastKnownName="BasicHitStrategy"
               LastKnownLocation="Package2_0950.uml" />
           </dependency>
+          <dependency
+            Id="5c3ca78f-eb1e-4e72-bd7e-0efe70b562a8">
+            <classMoniker
+              Id="a53cf927-0ae4-4cfd-b841-0232b0bfbfee"
+              LastKnownName="DealerWinsEqualScoreStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+          <dependency
+            Id="06876df2-5e43-43cc-8043-7ecd37d35b85">
+            <classMoniker
+              Id="a9843d6b-ec04-42d4-8e53-e729e3aeffc4"
+              LastKnownName="PlayerWinsEqualScoreStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+          <dependency
+            Id="9a8554f2-f162-43d5-965b-4ef5fffcebe0">
+            <classMoniker
+              Id="086de27a-7107-4194-bfaa-4e504c2d9238"
+              LastKnownName="Soft17HitStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="deeb4612-b387-4b37-b07d-aa65b4ec2d17"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="acbf40d5-834b-4ae5-b5a7-e5db9f309559"
+        name="Class2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ab27be30-e97d-49dc-a871-884bf56cd539"
+        name="IWinStrategy"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a53cf927-0ae4-4cfd-b841-0232b0bfbfee"
+        name="DealerWinsEqualScoreStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="1dea224c-2751-4a4a-a14d-7cadb696c71b">
+            <interfaceMoniker
+              Id="ab27be30-e97d-49dc-a871-884bf56cd539"
+              LastKnownName="IWinStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a9843d6b-ec04-42d4-8e53-e729e3aeffc4"
+        name="PlayerWinsEqualScoreStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ec995608-42b8-46b5-8da2-8b3b013f9983">
+            <interfaceMoniker
+              Id="ab27be30-e97d-49dc-a871-884bf56cd539"
+              LastKnownName="IWinStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="bc397e41-7813-4b76-afb9-7075ddfef99c"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="086de27a-7107-4194-bfaa-4e504c2d9238"
+        name="Soft17HitStrategy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="ea9e167e-66d0-4509-97b2-9e3d419decfd">
+            <interfaceMoniker
+              Id="550cd927-6beb-4715-ac7e-1afec083ec6b"
+              LastKnownName="IHitStrategy"
+              LastKnownLocation="Package2_0950.uml" />
+          </interfaceRealization>
         </suppliersInternal>
       </class>
     </packageHasNamedElement>

@@ -18,6 +18,13 @@
               LastKnownName="Card"
               LastKnownLocation="Package1_0950.uml" />
           </dependency>
+          <dependency
+            Id="71076fbd-09c1-4b81-a59c-e0aacb12d85d">
+            <interfaceMoniker
+              Id="1e2e233c-be80-4a95-a20c-6353542a12bb"
+              LastKnownName="BlackJackObserver"
+              LastKnownLocation="Package1_0950.uml" />
+          </dependency>
         </suppliersInternal>
       </Interface>
     </packageHasNamedElement>

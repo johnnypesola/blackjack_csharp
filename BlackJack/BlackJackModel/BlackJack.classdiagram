@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="ce6ab5ad-19fd-4084-80ad-80094c6e032b" name="BlackJack" linkedPackageId="c879b0ba-216b-4f86-a1b3-4869d9637133" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="2bf60460-03bc-4e63-952b-de9c994e7f2e">
-      <profileInstance Id="6f3c822f-97c6-40dc-b40d-1b1d710f3f3a" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="3d43105f-cf22-44f0-b413-965ff7a663d4">
-      <profileInstance Id="7cd8b8e8-c867-4557-8673-8948b0c64a4f" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="67210203-217c-4952-b91e-e329c1623f52" name="controller">
@@ -48,6 +34,10 @@
                 <dependency Id="5501c561-5f5a-490e-911e-caf57bcb72c8">
                   <classMoniker Id="04673482-5b9b-481b-8cfb-351cb3a35bff" LastKnownName="Card" />
                   <elementDefinition Id="2f231c89-6947-4a76-90eb-d230987cc959" />
+                </dependency>
+                <dependency Id="37e5f4d5-dfe2-45c8-a733-860a23462ef4">
+                  <interfaceMoniker Id="fc2333c3-a758-4f7e-b96f-db05a392025e" LastKnownName="BlackJackObserver" />
+                  <elementDefinition Id="71076fbd-09c1-4b81-a59c-e0aacb12d85d" />
                 </dependency>
               </suppliersInternal>
             </Interface>
@@ -144,6 +134,56 @@
                         <classMoniker Id="66dbb5c1-8fee-4479-bae9-38c874f43ffe" LastKnownName="BasicHitStrategy" />
                         <elementDefinition Id="b84f68a1-bf94-4f25-968c-950ccefeeca8" />
                       </dependency>
+                      <dependency Id="adec0f86-20e8-4821-b19c-a115a98464a6">
+                        <classMoniker Id="bbd0ecc9-ed2c-4827-bc1b-6be2ee132ed7" LastKnownName="DealerWinsEqualScoreStrategy" />
+                        <elementDefinition Id="5c3ca78f-eb1e-4e72-bd7e-0efe70b562a8" />
+                      </dependency>
+                      <dependency Id="75d9c156-5a65-4f24-a783-f427cd342d62">
+                        <classMoniker Id="3f458925-ce33-47ab-8526-48e898a1e2e6" LastKnownName="PlayerWinsEqualScoreStrategy" />
+                        <elementDefinition Id="06876df2-5e43-43cc-8043-7ecd37d35b85" />
+                      </dependency>
+                      <dependency Id="fe4b1eaf-d36c-4181-bcb0-4fcb5819ff0b">
+                        <classMoniker Id="73816b82-50bc-4b38-964f-bbfa56afcd91" LastKnownName="Soft17HitStrategy" />
+                        <elementDefinition Id="9a8554f2-f162-43d5-965b-4ef5fffcebe0" />
+                      </dependency>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <Interface Id="7f768d18-018b-48ac-b824-980e89315920" name="IWinStrategy" isAbstract="false" isLeaf="false">
+                    <elementDefinition Id="ab27be30-e97d-49dc-a871-884bf56cd539" />
+                  </Interface>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="bbd0ecc9-ed2c-4827-bc1b-6be2ee132ed7" name="DealerWinsEqualScoreStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="a53cf927-0ae4-4cfd-b841-0232b0bfbfee" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="7b006353-bfd6-485d-84db-aa17fc815176">
+                        <interfaceMoniker Id="7f768d18-018b-48ac-b824-980e89315920" LastKnownName="IWinStrategy" />
+                        <elementDefinition Id="1dea224c-2751-4a4a-a14d-7cadb696c71b" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="3f458925-ce33-47ab-8526-48e898a1e2e6" name="PlayerWinsEqualScoreStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="a9843d6b-ec04-42d4-8e53-e729e3aeffc4" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="b2aff788-3e95-4564-a9cd-70469852d72a">
+                        <interfaceMoniker Id="7f768d18-018b-48ac-b824-980e89315920" LastKnownName="IWinStrategy" />
+                        <elementDefinition Id="ec995608-42b8-46b5-8da2-8b3b013f9983" />
+                      </interfaceRealization>
+                    </suppliersInternal>
+                  </class>
+                </packageHasNamedElement>
+                <packageHasNamedElement>
+                  <class Id="73816b82-50bc-4b38-964f-bbfa56afcd91" name="Soft17HitStrategy" isAbstract="false" isLeaf="false" isActiveClass="false">
+                    <elementDefinition Id="086de27a-7107-4194-bfaa-4e504c2d9238" />
+                    <suppliersInternal>
+                      <interfaceRealization Id="5d2c0e14-646f-4b04-a50d-52f5e36cb664">
+                        <interfaceMoniker Id="22acfdec-0761-4843-b8bc-fed534391061" LastKnownName="IHitStrategy" />
+                        <elementDefinition Id="ea9e167e-66d0-4509-97b2-9e3d419decfd" />
+                      </interfaceRealization>
                     </suppliersInternal>
                   </class>
                 </packageHasNamedElement>
@@ -279,12 +319,54 @@
                   </relationshipOwnedElementsInternal>
                   <elementDefinition Id="e57045bc-7b13-49b4-8760-d3f0a1a89346" />
                 </association>
+                <association Id="b7854143-3686-4a60-b8cd-c6f69dd0d1b0" isDerived="false" sourceEndRoleName=" " targetEndRoleName="m_winRule" isLeaf="false" isAbstract="false">
+                  <interfaceMoniker Id="7f768d18-018b-48ac-b824-980e89315920" LastKnownName="IWinStrategy" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="b92754c1-71b5-473a-aebc-d94b0c473db9" name=" " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <lowerValueInternal>
+                          <literalString Id="3d377a36-8b2f-42ca-a49c-1cd7949841f1" name="Lower">
+                            <elementDefinition Id="0f2f8325-1971-4a0c-8ef6-c14ff441dcf8" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="de83964d-6e67-44a0-86d8-bb2914968a91" name="Upper">
+                            <elementDefinition Id="ea23ea33-d51e-4bdb-bf6c-f5c203c91c41" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="3df81767-29b8-4bd0-9e3f-166e37a6e253" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="bb7bccb4-4a72-44c9-a538-765af046e17e" name="m_winRule" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <lowerValueInternal>
+                          <literalString Id="dfe55f8f-8d51-4f9d-b273-1f0625e9b85f" name="Lower">
+                            <elementDefinition Id="89a46210-0e84-4123-8daf-7a15ca682349" />
+                          </literalString>
+                        </lowerValueInternal>
+                        <upperValueInternal>
+                          <literalString Id="9b695f9d-1cc8-4375-8eca-ed5a67deedab" name="Upper">
+                            <elementDefinition Id="03f1c62b-c748-40d0-8556-d5313df9b469" />
+                          </literalString>
+                        </upperValueInternal>
+                        <elementDefinition Id="d95ad309-f0e4-4262-a54f-013ce7d4136b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="0b3ab93d-0420-469a-a33d-ea8ffa42bfd7" />
+                </association>
               </targetEnds>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
             <class Id="5008487d-acb2-4d99-b615-b610fd487a16" name="Player" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="e9cbcc72-94a8-4282-bffd-840431d0119d" />
+              <suppliersInternal>
+                <interfaceRealization Id="3a473024-5b82-4599-9bb4-78869843c1e4">
+                  <interfaceMoniker Id="fc2333c3-a758-4f7e-b96f-db05a392025e" LastKnownName="BlackJackObserver" />
+                  <elementDefinition Id="ba8e33ea-fa47-4313-9033-c0218d41723f" />
+                </interfaceRealization>
+              </suppliersInternal>
               <targetEnds>
                 <association Id="99cf2277-aa05-4c33-896d-e8abff0acd31" isDerived="false" sourceEndRoleName="" targetEndRoleName="m_hand" isLeaf="false" isAbstract="false">
                   <classMoniker Id="04673482-5b9b-481b-8cfb-351cb3a35bff" LastKnownName="Card" />
@@ -447,11 +529,30 @@
               </targetEnds>
             </class>
           </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="fc2333c3-a758-4f7e-b96f-db05a392025e" name="BlackJackObserver" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="1e2e233c-be80-4a95-a20c-6353542a12bb" />
+            </Interface>
+          </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
   </packagedElements>
   <package Id="c879b0ba-216b-4f86-a1b3-4869d9637133" name="BlackJackModel">
     <elementDefinition Id="46f1f7dc-7d54-44d9-b2ed-cc4ff28044bd" />
+    <profileInstances>
+      <packageHasProfileInstances Id="2bf60460-03bc-4e63-952b-de9c994e7f2e">
+        <profileInstance Id="6f3c822f-97c6-40dc-b40d-1b1d710f3f3a" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3d43105f-cf22-44f0-b413-965ff7a663d4">
+        <profileInstance Id="7cd8b8e8-c867-4557-8673-8948b0c64a4f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
