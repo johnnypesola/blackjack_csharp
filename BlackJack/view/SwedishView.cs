@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.view
 {
@@ -19,6 +20,16 @@ namespace BlackJack.view
             System.Console.WriteLine("----------------------");
             System.Console.WriteLine("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta\n");
         }
+
+        public void DisplayHands()
+        {
+            foreach (model.BlackJackObserver o in m_observers)
+            {
+                DisplayHand(o.GetName(), o.GetHand(), o.GetScore());
+                Thread.Sleep(500);
+            }
+        }
+
         public model.Game.Status GetInput()
         {
             int input = System.Console.In.Read();

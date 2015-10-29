@@ -7,7 +7,6 @@ namespace BlackJack.model
 {
     class Game
     {
-
         public enum Status
         {
             NewGame,
@@ -64,8 +63,6 @@ namespace BlackJack.model
 
         public bool Stand()
         {
-            // TODO: Implement this according to Game_Stand.sequencediagram DONE
-
             m_dealer.Stand();
             return true;
         }

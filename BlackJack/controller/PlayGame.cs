@@ -18,6 +18,8 @@ namespace BlackJack.controller
         {
             //a_game.AddSubscriber(this);
             m_view.DisplayWelcomeMessage();
+            
+            m_view.DisplayHands();
 
             
            // m_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
