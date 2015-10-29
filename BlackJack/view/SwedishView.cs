@@ -8,8 +8,8 @@ namespace BlackJack.view
 {
     class SwedishView : IView 
     {
-        List<model.BlackJackObserver> m_observers;
-        public void AddSubscribers(model.BlackJackObserver a_sub)
+        List<model.IBlackJackObserver> m_observers;
+        public void AddSubscribers(model.IBlackJackObserver a_sub)
         {
             m_observers.Add(a_sub);
         }
@@ -23,7 +23,7 @@ namespace BlackJack.view
 
         public void DisplayHands()
         {
-            foreach (model.BlackJackObserver o in m_observers)
+            foreach (model.IBlackJackObserver o in m_observers)
             {
                 DisplayHand(o.GetName(), o.GetHand(), o.GetScore());
                 Thread.Sleep(500);

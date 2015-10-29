@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlackJack.model
 {
-    interface BlackJackObserver
+    interface IBlackJackObserver
     {
         string GetName();
         int GetScore();

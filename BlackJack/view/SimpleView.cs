@@ -8,12 +8,12 @@ namespace BlackJack.view
 {
     class SimpleView : IView
     {
-        List<model.BlackJackObserver> m_observers;
-        public void AddSubscribers(model.BlackJackObserver a_sub)
+        List<model.IBlackJackObserver> m_observers;
+        public void AddSubscribers(model.IBlackJackObserver a_sub)
         {
             if (m_observers == null)
             {
-                m_observers = new List<model.BlackJackObserver>();
+                m_observers = new List<model.IBlackJackObserver>();
             }
             m_observers.Add(a_sub);
         }
@@ -27,7 +27,7 @@ namespace BlackJack.view
 
         public void DisplayHands()
         {
-            foreach (model.BlackJackObserver o in m_observers)
+            foreach (model.IBlackJackObserver o in m_observers)
             {
                 DisplayHand(o.GetName(), o.GetHand(), o.GetScore());
                 Thread.Sleep(500);

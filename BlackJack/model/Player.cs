@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace BlackJack.model
 {
-    class Player : model.BlackJackObserver
+    class Player : model.IBlackJackObserver
     {
         private List<Card> m_hand = new List<Card>();
 

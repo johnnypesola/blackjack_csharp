@@ -19,11 +19,10 @@ namespace BlackJack.controller
             //a_game.AddSubscriber(this);
             m_view.DisplayWelcomeMessage();
             
-            m_view.DisplayHands();
-
-            
            // m_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
             //m_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());//
+
+            m_view.DisplayHands();
 
             if (a_game.IsGameOver())
             {

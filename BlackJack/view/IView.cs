@@ -7,7 +7,7 @@ namespace BlackJack.view
 {
     interface IView
     {
-        void AddSubscribers(model.BlackJackObserver a_sub);
+        void AddSubscribers(model.IBlackJackObserver a_sub);
         void DisplayWelcomeMessage();
         model.Game.Status GetInput();
         void DisplayCard(model.Card a_card);
