@@ -36,17 +36,18 @@ namespace BlackJack.view
 
         public model.Game.Status GetInput()
         {
-            int input = System.Console.In.Read();
+            //int input = System.Console.In.Read();
+            string input = System.Console.ReadLine();
 
             switch (input)
             {
-                case 'p':
+                case "p":
                     return model.Game.Status.NewGame;
-                case 's':
+                case "s":
                     return model.Game.Status.Stand;
-                case 'h':
+                case "h":
                     return model.Game.Status.Hit;
-                case 'q':
+                case "q":
                     return model.Game.Status.Quit;
                 default:
                     return model.Game.Status.Undefined;
