@@ -1,0 +1,5 @@
+C:\Users\jopes\Documents\GitHub\blackjack_csharp\BlackJack\bin\Release\BlackJack.exe
+C:\Users\jopes\Documents\GitHub\blackjack_csharp\BlackJack\bin\Release\BlackJack.pdb
+C:\Users\jopes\Documents\GitHub\blackjack_csharp\BlackJack\obj\Release\BlackJack.csprojResolveAssemblyReference.cache
+C:\Users\jopes\Documents\GitHub\blackjack_csharp\BlackJack\obj\Release\BlackJack.exe
+C:\Users\jopes\Documents\GitHub\blackjack_csharp\BlackJack\obj\Release\BlackJack.pdb

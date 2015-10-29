@@ -10,6 +10,14 @@ namespace BlackJack.model
     {
         private List<Card> m_hand = new List<Card>();
 
+        virtual protected String name
+        {
+            get
+            {
+                return "Player";
+            }
+        }
+
         public void DealCard(Card a_card)
         {
             m_hand.Add(a_card);
@@ -74,7 +82,7 @@ namespace BlackJack.model
         }
         public string GetName()
         {
-            return "name";
+            return name;
         }
         public int GetScore()
         {

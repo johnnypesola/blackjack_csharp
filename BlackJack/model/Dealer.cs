@@ -14,6 +14,14 @@ namespace BlackJack.model
         private rules.IHitStrategy m_hitRule;
         private rules.IWinStrategy m_winRule;
 
+        protected override String name
+        {
+            get
+            {
+                return "Dealer";
+            }
+        }
+
         
         // Constructor
         public Dealer(rules.RulesFactory a_rulesFactory)
