@@ -8,7 +8,7 @@ namespace BlackJack.model
 {
     class Player : model.IBlackJackObserver
     {
-        private List<Card> m_hand = new List<Card>();
+        protected List<Card> m_hand = new List<Card>(20);
 
         virtual protected String name
         {

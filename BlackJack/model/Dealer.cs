@@ -8,7 +8,6 @@ namespace BlackJack.model
     class Dealer : Player
     {
         private Deck m_deck = null;
-        private List<Card> m_hand = new List<Card>(20);
 
         private rules.INewGameStrategy m_newGameRule;
         private rules.IHitStrategy m_hitRule;
@@ -21,7 +20,6 @@ namespace BlackJack.model
                 return "Dealer";
             }
         }
-
         
         // Constructor
         public Dealer(rules.RulesFactory a_rulesFactory)
@@ -60,12 +58,6 @@ namespace BlackJack.model
 
                 while(m_hitRule.DoHit(this))
                 {
-                    //Card c = m_deck.GetCard();
-
-                    //c.Show(true);
-
-                    //DealCard(c);
-
                     GetCardAndShow();
                 }
             }

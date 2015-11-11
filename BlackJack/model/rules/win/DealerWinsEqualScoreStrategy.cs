@@ -5,32 +5,10 @@ using System.Text;
 
 namespace BlackJack.model.rules
 {
-    class DealerWinsEqualScoreStrategy : IWinStrategy
+    class DealerWinsEqualScoreStrategy : BaseWinsEqualScoreStrategy
     {
-        private const int g_maxScore = 21;
-
-        public int MaxScore
+        public override bool IsDealerWinnerOnEqualScore(int dealerScore, int playerScore)
         {
-            get
-            {
-                return g_maxScore;
-            }
-        }
-
-        public bool IsDealerWinner(Player a_dealer, Player a_player)
-        {
-            int dealerScore = a_dealer.CalcScore();
-            int playerScore = a_player.CalcScore();
-
-            if (playerScore > g_maxScore)
-            {
-                return true;
-            }
-            else if (dealerScore > g_maxScore)
-            {
-                return false;
-            }
-
             return dealerScore >= playerScore;
         }
     }

@@ -14,5 +14,7 @@ namespace BlackJack.model.rules
         {
             get;
         }
+
+        bool IsDealerWinnerOnEqualScore(int dealerScore, int playerScore);
     }
 }
