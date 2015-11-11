@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace BlackJack.view
 {
-    class SwedishView : IView 
+    class SwedishView : BaseView 
     {
         List<model.IBlackJackObserver> m_observers;
         public void AddSubscribers(model.IBlackJackObserver a_sub)
@@ -18,47 +18,26 @@ namespace BlackJack.view
             m_observers.Add(a_sub);
         }
 
-        public void DisplayWelcomeMessage()
+        public override void DisplayWelcomeMessage()
         {
             System.Console.Clear();
             System.Console.WriteLine("Hej Black Jack Världen");
             System.Console.WriteLine("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för avsluta\n");
         }
 
-
-        public model.Game.Status GetInput()
-        {
-            //int input = System.Console.In.Read();
-            string input = System.Console.ReadLine();
-
-            switch (input)
-            {
-                case "p":
-                    return model.Game.Status.NewGame;
-                case "s":
-                    return model.Game.Status.Stand;
-                case "h":
-                    return model.Game.Status.Hit;
-                case "q":
-                    return model.Game.Status.Quit;
-                default:
-                    return model.Game.Status.Undefined;
-            }
-        }
-
-        public void DisplayCard(model.Card a_card, String playerStr = "")
+        public override void DisplayCard(model.Card a_card, String playerStr = "")
         {
             playerStr = (playerStr == "" ? "" : String.Format("{0} got ", playerStr));
 
             System.Console.WriteLine("{0} of {1}", a_card.GetValue(), a_card.GetColor());
         }
 
-        public void DisplayPlayerHand(IEnumerable<model.Card> a_hand, int a_score)
+        public override void DisplayPlayerHand(IEnumerable<model.Card> a_hand, int a_score)
         {
             DisplayHand("Spelare", a_hand, a_score);
         }
 
-        public void DisplayDealerHand(IEnumerable<model.Card> a_hand, int a_score)
+        public override void DisplayDealerHand(IEnumerable<model.Card> a_hand, int a_score)
         {
             DisplayHand("Dealern", a_hand, a_score);
         }
@@ -74,7 +53,7 @@ namespace BlackJack.view
             System.Console.WriteLine("");
         }
 
-        public void DisplayGameOver(bool a_dealerIsWinner)
+        public override void DisplayGameOver(bool a_dealerIsWinner)
         {
             System.Console.Write("GameOver: ");
             if (a_dealerIsWinner)

@@ -58,7 +58,7 @@ namespace BlackJack.controller
         {
             m_view.DisplayCard(card, playerName);
 
-            Thread.Sleep(1000);
+            m_view.DoSleep();
         }
 
     }
