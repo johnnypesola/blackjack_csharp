@@ -25,14 +25,6 @@ namespace BlackJack.view
             System.Console.WriteLine("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för avsluta\n");
         }
 
-        public void DisplayHands()
-        {
-            foreach (model.IBlackJackObserver o in m_observers)
-            {
-                DisplayHand(o.GetName(), o.GetHand(), o.GetScore());
-                Thread.Sleep(500);
-            }
-        }
 
         public model.Game.Status GetInput()
         {
@@ -54,8 +46,10 @@ namespace BlackJack.view
             }
         }
 
-        public void DisplayCard(model.Card a_card)
+        public void DisplayCard(model.Card a_card, String playerStr = "")
         {
+            playerStr = (playerStr == "" ? "" : String.Format("{0} got ", playerStr));
+
             System.Console.WriteLine("{0} of {1}", a_card.GetValue(), a_card.GetColor());
         }
 

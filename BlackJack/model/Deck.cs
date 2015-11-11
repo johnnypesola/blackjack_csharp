@@ -29,6 +29,7 @@ namespace BlackJack.model
         {
             Card c = m_cards.First();
             m_cards.RemoveAt(0);
+
             return c;
         }
 

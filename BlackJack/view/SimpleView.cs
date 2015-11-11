@@ -8,16 +8,7 @@ namespace BlackJack.view
 {
     class SimpleView : IView
     {
-        List<model.IBlackJackObserver> m_observers;
-        public void AddSubscribers(model.IBlackJackObserver a_sub)
-        {
-            if (m_observers == null)
-            {
-                m_observers = new List<model.IBlackJackObserver>();
-            }
-            m_observers.Add(a_sub);
-        }
-
+ 
         public void DisplayWelcomeMessage()
         {
             System.Console.Clear();
@@ -25,19 +16,11 @@ namespace BlackJack.view
             System.Console.WriteLine("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
         }
 
-        public void DisplayHands()
-        {
-            foreach (model.IBlackJackObserver o in m_observers)
-            {
-                DisplayHand(o.GetName(), o.GetHand(), o.GetScore());
-                Thread.Sleep(500);
-            }
-        }
-
         public model.Game.Status GetInput()
         {
-            //int input = System.Console.In.Read();
             string input = System.Console.ReadLine();
+
+            System.Console.WriteLine();
 
             switch (input)
             {
@@ -54,9 +37,11 @@ namespace BlackJack.view
             }
         }
 
-        public void DisplayCard(model.Card a_card)
+        public void DisplayCard(model.Card a_card, String playerStr = "")
         {
-            System.Console.WriteLine("{0} of {1}", a_card.GetValue(), a_card.GetColor());
+            playerStr = (playerStr == "" ? "" : String.Format("{0} got ", playerStr));
+
+            System.Console.WriteLine("{0}{1} of {2}", playerStr, a_card.GetValue(), a_card.GetColor());
         }
 
         public void DisplayPlayerHand(IEnumerable<model.Card> a_hand, int a_score)

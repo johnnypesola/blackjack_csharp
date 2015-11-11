@@ -6,42 +6,44 @@ using System.Threading;
 
 namespace BlackJack.controller
 {
-    class PlayGame
+    class PlayGame : model.IBlackJackObserver
     {
         view.IView m_view;
+        model.Game m_game;
 
-        public PlayGame(view.IView a_view)
+        public PlayGame(view.IView a_view, model.Game a_game)
         {
             m_view = a_view;
+            m_game = a_game;
+
+            // Subscribe to observer
+            m_game.AddSubscribtionToCards(this);
         }
-        public bool Play(model.Game a_game)
+        public bool Play()
         {
-            //a_game.AddSubscriber(this);
             m_view.DisplayWelcomeMessage();
-            
-           // m_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
-            //m_view.DisplayPlayerHand(a_game.GetPlayerHand(), a_game.GetPlayerScore());//
 
-            m_view.DisplayHands();
+            m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+            m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
 
-            if (a_game.IsGameOver())
+            if (m_game.IsGameOver())
             {
-                m_view.DisplayGameOver(a_game.IsDealerWinner());
+                m_view.DisplayGameOver(m_game.IsDealerWinner());
             }
 
             model.Game.Status input = m_view.GetInput();
 
             if (input == model.Game.Status.NewGame)
             {
-                a_game.NewGame();
+                m_game.NewGame();
             }
             else if (input == model.Game.Status.Hit)
             {
-                a_game.Hit();
+                m_game.Hit();
             }
             else if (input == model.Game.Status.Stand)
             {
-                a_game.Stand();
+                m_game.Stand();
             }
 
             return input != model.Game.Status.Quit;
@@ -50,5 +52,14 @@ namespace BlackJack.controller
         {
             m_view.DisplayPlayerHand(a_hand, a_score);
         }
+
+        // Observer listener method
+        public void GotCard(model.Card card, String playerName)
+        {
+            m_view.DisplayCard(card, playerName);
+
+            Thread.Sleep(1000);
+        }
+
     }
 }

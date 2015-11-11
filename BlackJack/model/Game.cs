@@ -17,26 +17,29 @@ namespace BlackJack.model
         }
 
         // Init variables
-        private model.Dealer m_dealer;
-        private model.Player m_player;
-
-        //List<BlackJackObserver> m_observers;
+        private Dealer m_dealer;
+        private Player m_player;
 
         // Constructor
         public Game(view.IView view)
         {
             m_dealer = new Dealer(new rules.RulesFactory());
             m_player = new Player();
-            view.AddSubscribers(m_dealer);
-            view.AddSubscribers(m_player);
-            //m_observers = new List<BlackJackObserver>();
         }
 
         // Public methods
-        //public void AddSubscriber(BlackJackObserver a_sub)
-        //{
-        //    m_observers.Add(a_sub);
-        //}
+        public void AddSubscribtionToCards(IBlackJackObserver a_sub)
+        {
+            m_dealer.AddSubscriber(a_sub);
+            m_player.AddSubscriber(a_sub);
+        }
+
+        public void RemoveSubscriptionToCards(IBlackJackObserver a_sub)
+        {
+            m_dealer.RemoveSubscriber(a_sub);
+            m_player.RemoveSubscriber(a_sub);
+        }
+
         public bool IsGameOver()
         {
             return m_dealer.IsGameOver();
@@ -54,10 +57,6 @@ namespace BlackJack.model
 
         public bool Hit()
         {
-            //foreach (BlackJackObserver o in m_observers)
-            //{
-            //    o.NewCardDealt(m_player.GetHand(), m_player.CalcScore());
-            //}
             return m_dealer.Hit(m_player);
         }
 
@@ -69,13 +68,11 @@ namespace BlackJack.model
 
         public IEnumerable<Card> GetDealerHand()
         {
-            //System.Threading.Thread.Sleep(2000);
             return m_dealer.GetHand();
         }
 
         public IEnumerable<Card> GetPlayerHand()
         {
-            //System.Threading.Thread.Sleep(2000);
             return m_player.GetHand();
         }
 
