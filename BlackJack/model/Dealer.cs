@@ -40,11 +40,33 @@ namespace BlackJack.model
             }
             return false;
         }
-        private Card GetCardAndShow()
+
+        // Another dealcard variant for Dealer
+        /*
+        public void DealHiddenCard(Player a_player)
+        {
+            Card c;
+            c = m_deck.GetCard();
+            c.Show(false);
+
+            //if null is send as argument, dealer deals
+            if (a_player != null)
+            {
+                a_player.DealCard(c);
+            }
+            else
+            {
+                this.DealCard(c);
+            }
+
+        }
+        */
+
+        private Card GetCardAndShow(Player a_player)
         {
             Card c = m_deck.GetCard();
             c.Show(true);
-            DealCard(c);
+            a_player.DealCard(c);
 
             return c;
         }
@@ -58,7 +80,7 @@ namespace BlackJack.model
 
                 while(m_hitRule.DoHit(this))
                 {
-                    GetCardAndShow();
+                    GetCardAndShow(this);
                 }
             }
         }
@@ -68,7 +90,7 @@ namespace BlackJack.model
         {
             if (m_deck != null && a_player.CalcScore() < m_winRule.MaxScore && !IsGameOver())
             {
-                a_player.DealCard(GetCardAndShow());
+                GetCardAndShow(a_player);
 
                 return true;
             }
