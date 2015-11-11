@@ -41,27 +41,6 @@ namespace BlackJack.model
             return false;
         }
 
-        // Another dealcard variant for Dealer
-        /*
-        public void DealHiddenCard(Player a_player)
-        {
-            Card c;
-            c = m_deck.GetCard();
-            c.Show(false);
-
-            //if null is send as argument, dealer deals
-            if (a_player != null)
-            {
-                a_player.DealCard(c);
-            }
-            else
-            {
-                this.DealCard(c);
-            }
-
-        }
-        */
-
         private Card GetCardAndShow(Player a_player)
         {
             Card c = m_deck.GetCard();

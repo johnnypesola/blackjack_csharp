@@ -8,16 +8,6 @@ namespace BlackJack.view
 {
     class SwedishView : BaseView 
     {
-        List<model.IBlackJackObserver> m_observers;
-        public void AddSubscribers(model.IBlackJackObserver a_sub)
-        {
-            if (m_observers == null)
-            {
-                m_observers = new List<model.IBlackJackObserver>();
-            }
-            m_observers.Add(a_sub);
-        }
-
         public override void DisplayWelcomeMessage()
         {
             System.Console.Clear();

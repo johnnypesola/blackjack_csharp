@@ -100,13 +100,5 @@ namespace BlackJack.model
 
             return score;
         }
-        public string GetName()
-        {
-            return name;
-        }
-        public int GetScore()
-        {
-            return CalcScore();
-        }
     }
 }

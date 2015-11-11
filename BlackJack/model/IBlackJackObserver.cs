@@ -7,12 +7,6 @@ namespace BlackJack.model
 {
     interface IBlackJackObserver
     {
-        /*
-        string GetName();
-        int GetScore();
-        IEnumerable<Card> GetHand();
-        */
-
         void GotCard(Card card, String playerName);
     }
 }

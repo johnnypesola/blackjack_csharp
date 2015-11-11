@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="611d0dda-1055-4b6d-bca5-9dad81e292a9"
   name="model" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -371,13 +371,13 @@
         isLeaf="false"
         isActiveClass="false">
         <suppliersInternal>
-          <interfaceRealization
-            Id="ba8e33ea-fa47-4313-9033-c0218d41723f">
+          <dependency
+            Id="2bc85120-2cb5-4909-84bc-862d8288f3a9">
             <interfaceMoniker
               Id="1e2e233c-be80-4a95-a20c-6353542a12bb"
               LastKnownName="BlackJackObserver"
               LastKnownLocation="Package1_0950.uml" />
-          </interfaceRealization>
+          </dependency>
         </suppliersInternal>
         <targetEnds>
           <association
@@ -459,6 +459,13 @@
               Id="daa2b7a8-1024-4de0-8428-0008d3ffa08b"
               LastKnownName="IView"
               LastKnownLocation="Package_0950.uml" />
+          </dependency>
+          <dependency
+            Id="7b2a625d-868f-46f0-8d12-7ccda6c24b6c">
+            <interfaceMoniker
+              Id="1e2e233c-be80-4a95-a20c-6353542a12bb"
+              LastKnownName="BlackJackObserver"
+              LastKnownLocation="Package1_0950.uml" />
           </dependency>
         </suppliersInternal>
         <targetEnds>
