@@ -68,8 +68,7 @@ namespace BlackJack.model
         {
             if (m_deck != null && a_player.CalcScore() < m_winRule.MaxScore && !IsGameOver())
             {
-                GetCardAndShow();
-                //a_player.DealCard();
+                a_player.DealCard(GetCardAndShow());
 
                 return true;
             }
